@@ -1,5 +1,5 @@
 ﻿using Завдання_12.Purchase;
-using Завдання_12.Storage;
+using Завдання_12.StorageClasses;
 
 namespace Завдання_12.User
 {

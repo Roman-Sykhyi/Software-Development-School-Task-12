@@ -1,7 +1,9 @@
-﻿namespace Завдання_12.Storage
+﻿using System.Collections.Generic;
+
+namespace Завдання_12.StorageClasses
 {
     public interface IStorageViewer
     {
-        public void ShowStorage();
+        public IReadOnlyList<(Product, int)> GetProducts();
     }
 }

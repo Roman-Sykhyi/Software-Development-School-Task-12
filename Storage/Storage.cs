@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Завдання_12.Storage
+namespace Завдання_12.StorageClasses
 {
     public class Storage
     {
