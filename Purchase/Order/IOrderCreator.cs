@@ -1,7 +1,11 @@
-﻿namespace Завдання_12.Purchase.Order
+﻿using System;
+using System.Collections.Generic;
+using Завдання_12.User;
+
+namespace Завдання_12.Purchase.Order
 {
-    interface IOrderCreator
+    public interface IOrderCreator
     {
-        public void CreateOrder();
+        public void CreateOrder(IReadOnlyList<(Product, int)> purchases, Guid clientId, ClientType clientType, bool delivery);
     }
 }

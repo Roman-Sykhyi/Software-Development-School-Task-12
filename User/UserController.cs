@@ -8,9 +8,15 @@ namespace Завдання_12.User
         public IReadOnlyList<User> Users => _users.AsReadOnly();
         private List<User> _users;
 
-        public void ChangeClientType(Client client, ClientType clientType)
+        public void ChangeClientType(Guid clientId, ClientType clientType)
         {
-            throw new NotImplementedException();
+            User user = _users.Find((User u) => u.Id == clientId);
+
+            if(user is Client)
+            {
+                Client client = user as Client;
+                client.SetType(clientType);
+            }
         }
     }
 }

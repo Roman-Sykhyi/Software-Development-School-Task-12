@@ -3,8 +3,8 @@ using Завдання_12.User;
 
 namespace Завдання_12.Purchase
 {
-    interface IPriceCalculator
+    public interface IPriceCalculator
     {
-        public double GetTotalPrice(List<(Product, int)> purchases, ClientType clientType);
+        public double GetTotalPrice(IReadOnlyList<(Product, int)> purchases, ClientType clientType);
     }
 }

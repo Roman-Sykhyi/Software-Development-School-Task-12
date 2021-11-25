@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Завдання_12.User;
 
 namespace Завдання_12.Purchase.Order
 {
@@ -8,19 +9,22 @@ namespace Завдання_12.Purchase.Order
         public IReadOnlyList<Order> Orders => _orders.AsReadOnly();
         private List<Order> _orders;
 
+        private IPriceCalculator _priceCalculator;
+
         public Order GetOrder(Guid orderId)
         {
-            throw new NotImplementedException();
+            return _orders.Find((Order o) => o.Id == orderId);
         }
 
-        public void CreateOrder()
+        public void CreateOrder(IReadOnlyList<(Product, int)> purchases, Guid clientId, ClientType clientType, bool delivery)
         {
-            throw new NotImplementedException();
+            Order order = new Order(purchases, clientId, delivery, _priceCalculator.GetTotalPrice(purchases, clientType));
+            _orders.Add(order);
         }
 
         public void DeleteOrder(Order order)
         {
-            throw new NotImplementedException();
+            _orders.Remove(order);
         }
     }
 }
