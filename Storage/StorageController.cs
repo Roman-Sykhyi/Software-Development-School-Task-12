@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Завдання_12.StorageClasses
 {
-    public class StorageController : IStorageViewer
+    public class StorageController : IStorageViewer, IStorageAdministrator
     {
         private Storage _storage;
 

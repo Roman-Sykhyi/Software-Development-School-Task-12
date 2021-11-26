@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Завдання_12.User;
 
 namespace Завдання_12.Purchase.Order
 {

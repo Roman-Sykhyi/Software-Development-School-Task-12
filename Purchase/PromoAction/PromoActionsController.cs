@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Завдання_12.User;
+﻿using System.Collections.Generic;
+using Завдання_12.UserClasses;
 
 namespace Завдання_12.Purchase.PromoAction
 {

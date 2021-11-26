@@ -1,4 +1,4 @@
-﻿namespace Завдання_12.User
+﻿namespace Завдання_12.UserClasses
 {
     public enum ClientType
     {

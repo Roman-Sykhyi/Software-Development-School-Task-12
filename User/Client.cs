@@ -4,7 +4,7 @@ using Завдання_12.Purchase;
 using Завдання_12.Purchase.Order;
 using Завдання_12.StorageClasses;
 
-namespace Завдання_12.User
+namespace Завдання_12.UserClasses
 {
     public class Client : User
     {
@@ -17,7 +17,8 @@ namespace Завдання_12.User
         private IStorageViewer _storageViewer;
         private IOrderCreator _orderCreator;
 
-        public Client(string address, IStorageViewer storageViewer, IOrderCreator orderCreator)
+        public Client(Guid id, string name, string login, string password, string address, IStorageViewer storageViewer, IOrderCreator orderCreator)
+            : base(id, name, login, password)
         {
             Type = ClientType.New;
             Address = address ?? throw new ArgumentNullException(nameof(address));
@@ -27,7 +28,7 @@ namespace Завдання_12.User
             _cart = new Cart();
         }
 
-        internal void SetType(ClientType clientType)
+        public void SetType(ClientType clientType)
         {
             Type = clientType;
         }

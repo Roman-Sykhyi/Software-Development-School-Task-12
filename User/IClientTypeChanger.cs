@@ -1,9 +1,9 @@
 ﻿using System;
 
-namespace Завдання_12.User
+namespace Завдання_12.UserClasses
 {
     public interface IClientTypeChanger
     {
-        public void ChangeClientType(Guid clientId, ClientType clientType);
+        public void ChangeClientType(string login, ClientType clientType);
     }
 }

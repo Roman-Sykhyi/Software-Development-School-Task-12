@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Завдання_12.Purchase.Order;
-using Завдання_12.User;
+﻿using System.Collections.Generic;
 
 namespace Завдання_12.Purchase
 {
