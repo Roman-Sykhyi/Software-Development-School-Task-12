@@ -12,7 +12,7 @@ namespace Завдання_12.UserClasses
 
         public string Address { get; private set; }
 
-        private Cart _cart;
+        public Cart Cart { get; private set; }
 
         private IStorageViewer _storageViewer;
         private IOrderCreator _orderCreator;
@@ -25,7 +25,7 @@ namespace Завдання_12.UserClasses
             _storageViewer = storageViewer ?? throw new ArgumentNullException(nameof(storageViewer));
             _orderCreator = orderCreator ?? throw new ArgumentNullException(nameof(orderCreator));
 
-            _cart = new Cart();
+            Cart = new Cart();
         }
 
         public void SetType(ClientType clientType)
@@ -40,7 +40,8 @@ namespace Завдання_12.UserClasses
 
         public void ConfirmOrder(bool shouldDeliver)
         {
-            _orderCreator.CreateOrder(_cart.Purchases, Id, Type, shouldDeliver);
+            if(Cart.Purchases.Count > 0)
+                _orderCreator.CreateOrder(Cart.Purchases, Id, Type, shouldDeliver);
         }
     }
 }
