@@ -8,17 +8,39 @@ namespace Завдання_12.Purchase.Order
         public Guid Id { get; private set; }
 
         private IReadOnlyList<(Product, int)> _purchases;
-        private Guid _clientId;
+        private string _clientLogin;
         private double _totalPrice;
         private bool _delivery;
 
-        public Order(IReadOnlyList<(Product, int)> purchases, Guid clientId, bool delivery, double totalPrice)
+        public Order(IReadOnlyList<(Product, int)> purchases, string clientLogin, bool delivery, double totalPrice)
         {
             Id = Guid.NewGuid();
             _purchases = purchases ?? throw new ArgumentNullException(nameof(purchases));
-            _clientId = clientId;
+            _clientLogin = clientLogin;
             _totalPrice = totalPrice;
             _delivery = delivery;
+        }
+
+        public override string ToString()
+        {
+            string result = "Ідентифікатор замовлення: " + Id;
+            result += ". Замовник: " + _clientLogin;
+            result += ". Сума замовлення: " + _totalPrice;
+            result += ". Доставка додому: ";
+
+            if (_delivery)
+                result += "так.";
+            else
+                result += "ні.";
+
+            result += "\nСписок товарів:\n";
+
+            foreach((Product, int) product in _purchases)
+            {
+                Console.WriteLine(product.Item1.ToString() + " К-сть: " + product.Item2);
+            }
+
+            return result;
         }
     }
 }

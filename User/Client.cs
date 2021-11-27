@@ -41,7 +41,7 @@ namespace Завдання_12.UserClasses
         public void ConfirmOrder(bool shouldDeliver)
         {
             if(Cart.Purchases.Count > 0)
-                _orderCreator.CreateOrder(Cart.Purchases, Id, Type, shouldDeliver);
+                _orderCreator.CreateOrder(Cart.Purchases, Login, Type, shouldDeliver);
         }
     }
 }

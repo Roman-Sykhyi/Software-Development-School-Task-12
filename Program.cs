@@ -13,8 +13,8 @@ namespace Завдання_12
 
         public static UserController userController = new UserController();
         public static StorageController storageController = new StorageController(storage);
-        public static OrdersController ordersController = new OrdersController();
         public static PromoActionsController promoActionsController = new PromoActionsController();
+        public static OrdersController ordersController = new OrdersController(promoActionsController);
 
         public static User currentUser;
 
@@ -33,7 +33,7 @@ namespace Завдання_12
             }
             else if (currentUser is Moderator)
             {
-                ShowModeratorMenu();
+                ModeratorMenu.ShowModeratorMenu();
             }
             else if (currentUser is Administrator)
             {
@@ -43,15 +43,9 @@ namespace Завдання_12
             Console.ReadKey();
         }
 
-        private static void ShowModeratorMenu()
-        {
-            Moderator moderator = currentUser as Moderator;
-
-
-        }
-
         public static void ViewProducts(IReadOnlyList<(Product, int)> products)
         {
+            Console.WriteLine("Перегляд товарів");
             foreach((Product, int) item in products)
             {
                 Console.WriteLine(item.Item1 + ". К-сть: " + item.Item2);
