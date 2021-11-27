@@ -37,17 +37,10 @@ namespace Завдання_12
             }
             else if (currentUser is Administrator)
             {
-                ShowAdministratorMenu();
+                AdminMenu.ShowAdministratorMenu();
             }
 
             Console.ReadKey();
-        }
-
-        private static void ShowAdministratorMenu()
-        {
-            Administrator administrator = currentUser as Administrator;
-
-
         }
 
         private static void ShowModeratorMenu()
