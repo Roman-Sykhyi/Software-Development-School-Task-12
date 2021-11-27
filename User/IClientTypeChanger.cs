@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Завдання_12.UserClasses
+﻿namespace Завдання_12.UserClasses
 {
     public interface IClientTypeChanger
     {
